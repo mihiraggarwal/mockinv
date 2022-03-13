@@ -4,3 +4,4 @@ python-dotenv==0.19.2
 requests==2.23.0
 SQLAlchemy==1.4.15
 python-dotenv==0.13.0
+lxml==4.6.3

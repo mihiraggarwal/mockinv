@@ -78,7 +78,7 @@ class Transact:
 
     def __init__(self, type, stock):
         self.type = type
-        self.stock = stock
+        self.stock = "_".join(stock.lower().split())
     
     def transact(self):
         stock_price = db.execute(f"select Close from {self.stock}").fetchall()[-1][0]
@@ -138,7 +138,8 @@ if __name__ == "__main__":
                     "graph <stock-name>": "Graph the opening and closing prices of the stocks",
                     "view wallet": "View the transaction history and wallet balance",
                     "buy <stock-name>": "Buy the stock at the latest closing price",
-                    "sell <stock-name>": "Sell the stock at the latest closing price"
+                    "sell <stock-name>": "Sell the stock at the latest closing price",
+                    "quit": "Exit the program"
                 }
                 for i in help:
                     print('{0:<20} {1:<}'.format(i, help[i]))
